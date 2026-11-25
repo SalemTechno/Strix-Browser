@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>متصفح Strix Browser — المتصفح الاحترافي للإنترنت وأنظمة المراقبة والشبكات | SalemTechno</title>
+  <style>
+    :root {
+      --bg-main: #070d19;
+      --bg-card: #0f172a;
+      --bg-card-hover: #131f38;
+      --border: #1e293b;
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+      --success: #22c55e;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-main);
+      color: var(--text-primary);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.75;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      background: linear-gradient(180deg, #0b1528 0%, #070d19 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 0 44px;
+      text-align: center;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      padding: 6px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+    h1 span { color: var(--accent); }
+    .subtitle {
+      max-width: 820px;
+      margin: 0 auto 28px;
+      color: var(--text-secondary);
+      font-size: 18px;
+    }
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-dark), #2563eb);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--accent);
+    }
+    .btn-secondary:hover { background: var(--bg-card-hover); }
+    .section-title {
+      text-align: center;
+      margin: 56px 0 32px;
+    }
+    .section-title h2 {
+      font-size: 30px;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .section-title p {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .feature-box h3 {
+      color: var(--accent);
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+    .feature-box p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    .gallery-list {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+      margin-bottom: 64px;
+    }
+    .shot-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+    .shot-header {
+      padding: 22px 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .shot-number {
+      background: var(--accent-dark);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .shot-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      flex: 1;
+    }
+    .shot-body {
+      padding: 24px 28px;
+    }
+    .shot-desc {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .shot-img-wrap {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #26354d;
+      background: #050911;
+    }
+    .shot-img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      background: #050912;
+      padding: 36px 0;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+    footer strong { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="badge">الإصدار الرسمي v0.1.0 — متكامل ويعمل فوراً بدون متطلبات خارجية</div>
+      <h1>متصفح <span>Strix Browser</span> الاحترافي</h1>
+      <p class="subtitle">
+        الجيل الجديد من متصفحات الإنترنت فائقة السرعة والأمان، المزود بمدير تحميلات مسرّع 8 قنوات، وحاجب إعلانات مدمج، وأدوات احترافية لإدارة الشبكات وأنظمة المراقبة (DVR / NVR / IP Cameras).
+      </p>
+      <div class="cta-group">
+        <a class="btn btn-primary" href="../04-Release/StrixBrowser-Setup-0.1.0-x64.exe">⬇ تحميل نسخة التثبيت الكاملة (Setup EXE)</a>
+        <a class="btn btn-secondary" href="../04-Release/StrixBrowser-0.1.0-win-x64-Portable.zip">📦 تحميل النسخة المحمولة (Portable ZIP)</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section-title">
+      <h2>أبرز المميزات الحصرية في Strix Browser</h2>
+      <p>مصمم ليجمع بين سرعة التصفح اليومي وأدوات الإدارة الهندسية المتقدمة</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3>⚡ مدير تحميلات مدمج (8 قنوات)</h3>
+        <p>تقسيم الملفات إلى 8 قنوات متوازية لمضاعفة سرعة التحميل مع دعم الإيقاف والاستئناف والفرز التلقائي للملفات دون الحاجة لأي برنامج خارجي.</p>
+      </div>
+      <div class="feature-box">
+        <h3>📹 دعم كامل لأنظمة المراقبة DVR / NVR</h3>
+        <p>فتح فوري لأجهزة الكاميرات والشبكات المحلية بدون رسائل حظر الشهادات، مع نظام Keep-Alive لمنع تسجيل الخروج التلقائي من شاشات المراقبة.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🛡️ مانع إعلانات وحماية خصوصية</h3>
+        <p>حجب تلقائي للإعلانات والنوافذ المنبثقة والمتتبعات لتسريع فتح المواقع وحماية خصوصيتك مع خزنة كلمات مرور مشفرة بالكامل.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🩺 فاحص الشبكة Network Doctor</h3>
+        <p>أداة تشخيص مدمجة لمراقبة حالة الاتصال وزمن استجابة المواقع والأجهزة بالملي ثانية واكتشاف أسباب البطء أو الانقطاع فوراً.</p>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>📸 جولة مصورة وشرح لجميع صفحات وإعدادات المتصفح</h2>
+      <p>استعرض جميع واجهات وأدوات وإعدادات Strix Browser بالتفصيل</p>
+    </div>
+
+    <div class="gallery-list">
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 1 من 13</span>
+          <h3 class="shot-title">الواجهة الرئيسية للمتصفح ونظام التبويبات الذكي وأداة منع قفل الجلسة (Keep-Alive)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            تتميز الواجهة بتصميم عصري مريح للعين، مع ثبات حجم التبويبات منذ لحظة فتحها، وأسهم تنقل احترافية (◀ / ▶) للتنقل السلس بين التبويبات الكثيرة، بالإضافة إلى نافذة Keep-Alive التي تحافظ على بقاء جلستك نشطة داخل أجهزة الـ DVR/NVR ولوحات التحكم السحابية دون تسجيل خروج تلقائي.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/01-Main-Browser-KeepAlive-And-Tabs.png" alt="الواجهة الرئيسية لمتصفح Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 2 من 13</span>
+          <h3 class="shot-title">القائمة الرئيسية المختصرة والسريعة (⋮)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            قائمة منسقة بحجم مثالي تمنحك وصولاً فورياً إلى أهم 5 أقسام رئيسية: الإعدادات (Settings)، مدير التحميلات (Downloads)، فاحص الشبكة (Network Doctor)، سجل التصفح (History)، ومعلومات البرنامج (About)، بينما تم تجميع كافة الإعدادات التفصيلية داخل لوحة الإعدادات الموحدة.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/02-Main-Menu-3Dots-Popup.png" alt="القائمة السريعة في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 3 من 13</span>
+          <h3 class="shot-title">مدير التحميلات الاحترافي متعدد القنوات (8x Multi-Thread Download Manager)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            مدير تحميلات متكامل يقسم الملفات الكبيرة إلى 8 أجزاء يتم تحميلها بالتوازي للوصول إلى أقصى سرعة للإنترنت، مع عرض حالة كل قناة، وتصنيف الملفات المحملة تلقائياً (برامج، مضغوط، فيديو، مستندات)، ودعم الإيقاف المؤقت والاستكمال في أي وقت.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/03-Downloads-Manager-IDM.png" alt="مدير التحميلات المدمج في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 4 من 13</span>
+          <h3 class="shot-title">أداة تشخيص الشبكة وفحص المواقع والأجهزة (Network Doctor)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            تعرض حالة جميع الاتصالات والطلبات لحظياً مع زمن الاستجابة بالملي ثانية (ms) وحجم البيانات، وتقوم بتشخيص أسباب بطء التحميل أو أخطاء الاتصال بأجهزة الشبكة والكاميرات بضغطة زر واحدة.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/04-Network-Doctor-Diagnostics.png" alt="أداة Network Doctor في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 5 من 13</span>
+          <h3 class="shot-title">الإعدادات (1/9): الإعدادات العامة واستيراد البيانات (General & Import)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            اختيار محرك البحث الافتراضي المفضل لديك، واستيراد المفضلة وكلمات المرور وسجل التصفح من أي متصفح آخر بضغطة زر واحدة، مع التحكم في عناصر الواجهة ومستوى تكبير الصفحات.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/05-Settings-01-General-And-Import.png" alt="الإعدادات العامة في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 6 من 13</span>
+          <h3 class="shot-title">الإعدادات (2/9): خزنة كلمات المرور المشفرة (Passwords Vault)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            حفظ وتعبئة بيانات تسجيل الدخول للمواقع وأجهزة الـ DVR/NVR والراوترات تلقائياً داخل خزنة مشفرة على جهازك، مع إمكانية البحث السريع أو إظهار ونسخ كلمات المرور أو أخذ نسخة احتياطية منها.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/06-Settings-02-Passwords-Vault.png" alt="خزنة كلمات المرور في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 7 من 13</span>
+          <h3 class="shot-title">الإعدادات (3/9): سجل التصفح وإدارة مساحة تخزين المواقع (History & Site Quota)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            تحكم كامل في مسح بيانات التصفح حسب الفترة الزمنية (آخر ساعة، 24 ساعة، 7 أيام، أو الكل)، مع جدول تفصيلي يعرض المساحة التخزينية التي يستهلكها كل موقع وإمكانية مسح بيانات موقع محدد فقط.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/07-Settings-03-History-And-Site-Quota.png" alt="سجل التصفح وإدارة مساحة المواقع" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 8 من 13</span>
+          <h3 class="shot-title">الإعدادات (4/9): الخصوصية والأمان وحاجب الإعلانات (Privacy & Security)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            إعدادات الحماية المدمجة لحجب الإعلانات والمتتبعات والنوافذ المنبثقة، وحماية البصمة الرقمية للمتصفح، وتفعيل الاتصال المشفر الآمن (HTTPS-Only و DNS-over-HTTPS).
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/08-Settings-04-Privacy-And-Security.png" alt="الخصوصية والأمان في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 9 من 13</span>
+          <h3 class="shot-title">الإعدادات (5/9): أذونات وصلاحيات المواقع (Site Permissions)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            التحكم في صلاحيات وصول المواقع إلى الكاميرا والميكروفون والموقع الجغرافي والإشعارات والتشغيل التلقائي للفيديو والصوت والحافظة.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/09-Settings-05-Permissions.png" alt="صلاحيات المواقع في Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 10 من 13</span>
+          <h3 class="shot-title">الإعدادات (6/9): بدء التشغيل والصفحة الرئيسية (On Startup & Home)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            تحديد سلوك المتصفح عند التشغيل (فتح الصفحة الرئيسية أو استعادة جميع التبويبات المفتوحة من الجلسة السابقة تلقائياً) وتخصيص رابط الصفحة الرئيسية.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/10-Settings-06-Startup-And-Home.png" alt="إعدادات بدء التشغيل والصفحة الرئيسية" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 11 من 13</span>
+          <h3 class="shot-title">الإعدادات (7/9): أنظمة المراقبة والكاميرات والشبكات (Surveillance & NVR)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            إعدادات متخصصة لقبول الشهادات المحلية لأجهزة الـ DVR / NVR / IP Cameras والراوترات تلقائياً، وتشغيل قنوات البث المباشر بدون توقف، وضبط المؤقت الافتراضي لمنع انتهاء الجلسة.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/11-Settings-07-Surveillance-DVR-NVR.png" alt="إعدادات أنظمة المراقبة والكاميرات" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 12 من 13</span>
+          <h3 class="shot-title">الإعدادات (8/9): النظام والأداء والتحميلات (System & Performance)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            تفعيل تسريع كارت الشاشة (Hardware GPU Acceleration) لأفضل أداء رسومي، وتحديد مجلد الحفظ الافتراضي للتحميلات وعدد القنوات المتوازية، وإعدادات البروكسي والشبكة.
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/12-Settings-08-System-Platform.png" alt="إعدادات النظام والأداء" />
+          </div>
+        </div>
+      </div>
+
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-number">صورة 13 من 13</span>
+          <h3 class="shot-title">الإعدادات (9/9): حول متصفح Strix Browser والدعم الفني (About Strix)</h3>
+        </div>
+        <div class="shot-body">
+          <p class="shot-desc">
+            بطاقة تعريف الإصدار الرسمي وبيانات المطور والدعم الفني المباشر لشركة SalemTechno (م. محمود سالم).
+          </p>
+          <div class="shot-img-wrap">
+            <img src="Screenshots/13-Settings-09-About-Strix-Browser.png" alt="حول متصفح Strix Browser" />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>جميع الحقوق محفوظة © <strong>SalemTechno | م. محمود سالم</strong></p>
+      <p>للدعم الفني والتواصل: <strong>01000920353</strong> | الموقع الرسمي: <strong>www.salemtechno.com</strong></p>
+    </div>
+  </footer>
+
+</body>
+</html>
