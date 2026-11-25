@@ -17,6 +17,7 @@
 
 <!-- Row 1: Core Architecture & Engineering Badges -->
 <p align="center">
+  <img src="https://img.shields.io/badge/License-100%25_Free_Forever-10b981?style=for-the-badge&logo=creativecommons&logoColor=white" alt="100% Free Forever" />
   <img src="https://img.shields.io/badge/Version-v1.0.0_Official-00e676?style=for-the-badge&logo=checkmarx&logoColor=black" alt="Version v1.0.0 Official" />
   <img src="https://img.shields.io/badge/Engine-Chromium_131_%2B_.NET_8_AOT-00b0ff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Chromium 131 + .NET 8 AOT" />
   <img src="https://img.shields.io/badge/Platform-Windows_10%2F11_%26_Server_x64-0078d4?style=for-the-badge&logo=windows&logoColor=white" alt="Windows 10/11 & Server x64" />
@@ -337,7 +338,14 @@ B3744CCF718753E1FB2FBF93BA3137690F57F46EBE16490859A581F5D33CEF63  StrixBrowser-1
 ---
 
 <a id="contact"></a>
-## 📞 التواصل والدعم الفني والترخيص | Contact, Enterprise Support & License
+## 📞 التواصل والترخيص المجاني الكامل | Contact & 100% Free License
+
+> [!TIP]
+> **💚 مجاني 100% بالكامل ومدى الحياة (بدون أي نسخ مدفوعة):**  
+> متصفح **Strix Browser** بجميع نسخه (`Setup EXE` و `MSI` و `Portable ZIP`) وكافة مميزاته **مجاني تماماً 100%** للاستخدام الشخصي والمؤسسي والهندسي، ولن يتم إصدار أي نسخ مدفوعة أو اشتراكات أو مميزات مقفولة أبداً — يُمنع بيعه أو التربّح من إعادة توزيعه.
+>
+> **💚 100% Free Forever (No Paid Editions):**  
+> **Strix Browser** is **100% free** across all editions (`Setup EXE`, `MSI`, and `Portable ZIP`) for personal, engineering, and organizational use — with **no paid versions, no subscriptions, and no locked features**, now or ever. Reselling this free software is strictly prohibited.
 
 <div align="center">
 
@@ -353,6 +361,6 @@ B3744CCF718753E1FB2FBF93BA3137690F57F46EBE16490859A581F5D33CEF63  StrixBrowser-1
   </a>
 </p>
 
-📄 **الترخيص (License):** جميع الحقوق محفوظة © 2026 شركة **Salem Techno** — م. محمود سالم. راجع ملف [`LICENSE`](./LICENSE) للتفاصيل.
+📄 **الترخيص (Freeware License):** متصفح مجاني 100% — جميع حقوق الملكية الفكرية محفوظة © 2026 شركة **Salem Techno** — م. محمود سالم. راجع ملف [`LICENSE`](./LICENSE) للتفاصيل.
 
 </div>
